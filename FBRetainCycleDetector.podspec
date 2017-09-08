@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.source       = {
     :git => "https://github.com/GaoZhenWei/FBRetainCycleDetector.git",
-    :tag => "0.2.0"
+    :tag => "0.2.1"
   }
   s.source_files  = "FBRetainCycleDetector", "{FBRetainCycleDetector,fishhook}/**/*.{h,m,mm,c}"
 
