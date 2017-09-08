@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FBRetainCycleDetector"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "Library that helps with detecting retain cycles in iOS apps"
   s.homepage     = "https://github.com/GaoZhenWei/FBRetainCycleDetector"
   s.license      = "BSD"
@@ -28,7 +28,9 @@ Pod::Spec.new do |s|
   files = files.reject {|file| mrr_files.include?(file)}
 
   s.requires_arc = files + [
-    'fishhook/**/*.{c,h}'
+    'fishhook/**/*.{c,h}',
+    "FBRetainCycleDetector/Graph/FBObjectiveCGraphElement.mm",
+    "FBRetainCycleDetector/Graph/FBObjectiveCGraphElement.h"
   ]
   s.public_header_files = [
     'FBRetainCycleDetector/Detector/FBRetainCycleDetector.h',
