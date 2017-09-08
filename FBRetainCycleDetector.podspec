@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FBRetainCycleDetector"
-  s.version      = "0.2.1"
+  s.version      = "0.2.2"
   s.summary      = "Library that helps with detecting retain cycles in iOS apps"
   s.homepage     = "https://github.com/GaoZhenWei/FBRetainCycleDetector"
   s.license      = "BSD"
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.source       = {
     :git => "https://github.com/GaoZhenWei/FBRetainCycleDetector.git",
-    :tag => "0.2.1"
+    :tag => "0.2.2"
   }
   s.source_files  = "FBRetainCycleDetector", "{FBRetainCycleDetector,fishhook}/**/*.{h,m,mm,c}"
 
@@ -29,8 +29,41 @@ Pod::Spec.new do |s|
 
   s.requires_arc = files + [
     'fishhook/**/*.{c,h}',
+    "FBRetainCycleDetector/Associations/Internal/FBAssociationManager+Internal.h",
+    "FBRetainCycleDetector/Detector/FBNodeEnumerator.h",
+    "FBRetainCycleDetector/Detector/FBRetainCycleDetector+Internal.h",
+    "FBRetainCycleDetector/Detector/FBRetainCycleDetector.h",
+    "FBRetainCycleDetector/FBRetainCycleUtils.h",
+    "FBRetainCycleDetector/Filtering/FBStandardGraphEdgeFilters.h",
+    "FBRetainCycleDetector/Graph/FBObjectGraphConfiguration.h",
+    "FBRetainCycleDetector/Graph/FBObjectiveCBlock.h",
+    "FBRetainCycleDetector/Graph/FBObjectiveCGraphElement.h",
+    "FBRetainCycleDetector/Graph/FBObjectiveCObject.h",
+    "FBRetainCycleDetector/Graph/Internal/FBObjectiveCGraphElement+Internal.h",
+    "FBRetainCycleDetector/Graph/Specialization/FBObjectiveCNSCFTimer.h",
+    "FBRetainCycleDetector/Layout/Blocks/FBBlockInterface.h",
+    "FBRetainCycleDetector/Layout/Classes/FBClassStrongLayout.h",
+    "FBRetainCycleDetector/Layout/Classes/Parser/BaseType.h",
+    "FBRetainCycleDetector/Layout/Classes/Parser/FBStructEncodingParser.h",
+    "FBRetainCycleDetector/Layout/Classes/Parser/Struct.h",
+    "FBRetainCycleDetector/Layout/Classes/Parser/Type.h",
+    "FBRetainCycleDetector/Layout/Classes/Reference/FBIvarReference.h",
+    "FBRetainCycleDetector/Layout/Classes/Reference/FBObjectInStructReference.h",
+    "FBRetainCycleDetector/Layout/Classes/Reference/FBObjectReference.h",
+    "FBRetainCycleDetector/FBRetainCycleUtils.m",
+    "FBRetainCycleDetector/Graph/FBObjectGraphConfiguration.m",
+    "FBRetainCycleDetector/Graph/FBObjectiveCBlock.m",
+    "FBRetainCycleDetector/Graph/FBObjectiveCObject.m",
+    "FBRetainCycleDetector/Layout/Classes/Reference/FBIvarReference.m",
+    "FBRetainCycleDetector/Layout/Classes/Reference/FBObjectInStructReference.m",
+    "FBRetainCycleDetector/Detector/FBNodeEnumerator.mm",
+    "FBRetainCycleDetector/Detector/FBRetainCycleDetector.mm",
+    "FBRetainCycleDetector/Filtering/FBStandardGraphEdgeFilters.mm",
     "FBRetainCycleDetector/Graph/FBObjectiveCGraphElement.mm",
-    "FBRetainCycleDetector/Graph/FBObjectiveCGraphElement.h"
+    "FBRetainCycleDetector/Graph/Specialization/FBObjectiveCNSCFTimer.mm",
+    "FBRetainCycleDetector/Layout/Classes/FBClassStrongLayout.mm",
+    "FBRetainCycleDetector/Layout/Classes/Parser/FBStructEncodingParser.mm",
+    "FBRetainCycleDetector/Layout/Classes/Parser/Struct.mm"
   ]
   s.public_header_files = [
     'FBRetainCycleDetector/Detector/FBRetainCycleDetector.h',
